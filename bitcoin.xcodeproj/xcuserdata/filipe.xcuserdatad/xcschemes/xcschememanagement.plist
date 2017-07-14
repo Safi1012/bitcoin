@@ -7,7 +7,20 @@
 		<key>bitcoin.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D46A19B51F1923280038B44C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D46A19C91F1923280038B44C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

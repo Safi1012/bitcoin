@@ -30,6 +30,7 @@
 		1FCA0C374C32343262BEC41D /* Pods-bitcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bitcoin/Pods-bitcoin.debug.xcconfig"; sourceTree = "<group>"; };
 		3601F16841015ECD1668D8A3 /* Pods-bitcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitcoin/Pods-bitcoin.release.xcconfig"; sourceTree = "<group>"; };
 		4120177897C14A5C44FA750A /* Pods_bitcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42E2A691F1929BF007276D1 /* bitcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bitcoin-Bridging-Header.h"; sourceTree = "<group>"; };
 		D46A19B61F1923280038B44C /* bitcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46A19B91F1923280038B44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D46A19BB1F1923280038B44C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,9 +78,9 @@
 				D46A19B81F1923280038B44C /* bitcoin */,
 				D46A19CD1F1923280038B44C /* bitcoinTests */,
 				D46A19B71F1923280038B44C /* Products */,
-				D46A19DA1F1924B00038B44C /* Podfile */,
 				A2E4EE976B3A443DE96EF15F /* Pods */,
 				E1A6F9EFAB7CADC2E642D660 /* Frameworks */,
+				D46A19DA1F1924B00038B44C /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +102,7 @@
 				D46A19C01F1923280038B44C /* Assets.xcassets */,
 				D46A19C21F1923280038B44C /* LaunchScreen.storyboard */,
 				D46A19C51F1923280038B44C /* Info.plist */,
+				D42E2A691F1929BF007276D1 /* bitcoin-Bridging-Header.h */,
 			);
 			path = bitcoin;
 			sourceTree = "<group>";
@@ -175,9 +177,11 @@
 				TargetAttributes = {
 					D46A19B51F1923280038B44C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 					D46A19C91F1923280038B44C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						TestTargetID = D46A19B51F1923280038B44C;
 					};
 				};
@@ -320,6 +324,7 @@
 		D46A19D11F1923280038B44C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -337,6 +342,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -375,6 +382,7 @@
 		D46A19D21F1923280038B44C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -392,6 +400,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
