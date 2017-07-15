@@ -12,10 +12,18 @@ import Charts
 class ViewController: UIViewController {
     
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var buttonDay: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonDay.isSelected = true
+        buttonDay.tintColor = UIColor.white
+        
+        self.imageView.image = UIImage(named: "arrowUpSoftEdge")
+        self.imageView.tintColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         
         ApiProxy().fetchTickerData(success: { (tickerData) in
             print("\(tickerData)")
@@ -49,9 +57,9 @@ class ViewController: UIViewController {
             a += 1.0
         }
         
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "BAM")
-        lineChartDataSet.setColor(UIColor.blue)
-        lineChartDataSet.mode = .linear
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "")
+        lineChartDataSet.setColor(UIColor.white)
+        lineChartDataSet.mode = .horizontalBezier
         lineChartDataSet.lineWidth = 1.0
         lineChartDataSet.circleRadius = 0.0
         lineChartDataSet.highlightColor = UIColor.red
@@ -68,11 +76,17 @@ class ViewController: UIViewController {
         lineChartView.xAxis.drawGridLinesEnabled = false
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dates)
         lineChartView.xAxis.labelCount = 5
+        lineChartView.xAxis.labelTextColor = UIColor.white
         lineChartView.rightAxis.enabled = false
         lineChartView.leftAxis.labelCount = 4
+        lineChartView.leftAxis.labelTextColor = UIColor.white
         lineChartView.legend.enabled = false
         lineChartView.chartDescription = nil
+        lineChartView.backgroundColor = UIColor(red: 39/255, green: 108/255, blue: 186/255, alpha: 1.0)
+        lineChartView.leftAxis.axisLineColor = UIColor(red: 39/255, green: 108/255, blue: 186/255, alpha: 1.0)
+        lineChartView.minOffset = 20.0
     }
     
 }
+
 
