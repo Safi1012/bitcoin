@@ -19,6 +19,12 @@ class ViewController: UIViewController {
         
         let price = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         setChart(dataPoints: price)
+        
+        ApiProxy().fetchTickerData(success: { (tickerData) in
+            print("\(tickerData)")
+        }) { (error) in
+            print(error.rawValue)
+        }
     }
     
     func setChart(dataPoints: [Double]) {
