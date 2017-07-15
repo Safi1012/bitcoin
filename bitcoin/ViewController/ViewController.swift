@@ -17,9 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let price = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        setChart(dataPoints: price)
-        
         ApiProxy().fetchTickerData(success: { (tickerData) in
             print("\(tickerData)")
         }) { (error) in
@@ -27,23 +24,32 @@ class ViewController: UIViewController {
         }
         
         
-        ApiProxy().fetchHistoricData(interval: .Day, success: { (tickerData) in
-            print("\(tickerData)")
+        ApiProxy().fetchHistoricData(interval: .Day, success: { (historicData) in
+            self.setChart(historicData: historicData)
+            
         }) { (error) in
             print(error.rawValue)
         }
         
     }
     
-    func setChart(dataPoints: [Double]) {
+    func setChart(historicData: [HistoricData]) {
         var dataEntries: [ChartDataEntry] = []
+        var dates = [String]()
         
-        for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: dataPoints[i])
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        var a = 0.0
+        
+        for i in (0..<historicData.count).reversed() {
+            let dataEntry = ChartDataEntry(x: Double(a), y: historicData[i].average)
             dataEntries.append(dataEntry)
+            dates.append(formatter.string(from: historicData[i].time))
+            a += 1.0
         }
         
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "My first line chart")
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "BAM")
         lineChartDataSet.setColor(UIColor.blue)
         lineChartDataSet.mode = .linear
         lineChartDataSet.lineWidth = 1.0
@@ -55,7 +61,17 @@ class ViewController: UIViewController {
         dataSets.append(lineChartDataSet)
         
         let lineChartData = LineChartData(dataSets: dataSets)
+        
         lineChartView.data = lineChartData
+        lineChartView.animate(xAxisDuration: 1.5)
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dates)
+        lineChartView.xAxis.labelCount = 5
+        lineChartView.rightAxis.enabled = false
+        lineChartView.leftAxis.labelCount = 4
+        lineChartView.legend.enabled = false
+        lineChartView.chartDescription = nil
     }
     
 }
