@@ -11,42 +11,109 @@ import Charts
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var trendIndicatorImageView: UIImageView!
+    @IBOutlet weak var oneDayPeriodButton: UIButton!
+    @IBOutlet weak var oneMonthPeriodButton: UIButton!
+    @IBOutlet weak var allTimePeriodButton: UIButton!
     @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var buttonDay: UIButton!
     
+    
+    // MARK: - Liecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonDay.isSelected = true
-        buttonDay.tintColor = UIColor.white
+        // 1Day button is preselected
+        oneDayPeriodButton.isSelected = true
+        oneDayPeriodButton.tintColor = UIColor.white
         
-        self.imageView.image = UIImage(named: "arrowUpSoftEdge")
-        self.imageView.tintColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
-        
+        // fetch data and update UI
+        updateBitcoinPrice()
+        updateChartData(interval: .Day)
+    }
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func oneDayButtonPressed(_ sender: UIButton) {
+        updatedButtonState(button: sender)
+        updateChartData(interval: .Day)
+    }
+    
+    @IBAction func oneMounthButtonPressed(_ sender: UIButton) {
+        updatedButtonState(button: sender)
+        updateChartData(interval: .Month)
+    }
+    
+    @IBAction func allTimeButtonPressed(_ sender: UIButton) {
+        updatedButtonState(button: sender)
+        updateChartData(interval: .Alltime)
+    }
+    
+    
+    // MARK: - Button UI
+    
+    func updatedButtonState(button: UIButton ) {
+        resetButtonStates()
+        selectButton(button: button)
+    }
+    
+    func resetButtonStates() {
+        oneDayPeriodButton.isSelected = false
+        oneMonthPeriodButton.isSelected = false
+        allTimePeriodButton.isSelected = false
+    }
+    
+    func selectButton(button: UIButton) {
+        button.isSelected = true
+        button.tintColor = UIColor.white
+    }
+    
+    
+    // MARK: - Chart UI
+    
+    func updateBitcoinPrice() {
         ApiProxy().fetchTickerData(success: { (tickerData) in
-            print("\(tickerData)")
+            self.priceLabel.text = String(tickerData.last) + " $"
+            
+            if tickerData.changes.percent.day >= 0.0 {
+                self.trendIndicatorImageView.image = UIImage(named: "arrowUpSoftEdge")
+                self.trendIndicatorImageView.tintColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            } else {
+                self.trendIndicatorImageView.image = UIImage(named: "arrowDownSoftEdge")
+                self.trendIndicatorImageView.tintColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            }
+            
         }) { (error) in
             print(error.rawValue)
+            
         }
-        
-        
-        ApiProxy().fetchHistoricData(interval: .Day, success: { (historicData) in
-            self.setChart(historicData: historicData)
+    }
+    
+    func updateChartData(interval: Interval) {
+        ApiProxy().fetchHistoricData(interval: interval, success: { (historicData) in
+            self.drawChart(historicData: historicData, interval: interval)
             
         }) { (error) in
             print(error.rawValue)
         }
-        
     }
     
-    func setChart(historicData: [HistoricData]) {
+    func drawChart(historicData: [HistoricData], interval: Interval) {
         var dataEntries: [ChartDataEntry] = []
         var dates = [String]()
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        
+        switch interval {
+        case .Day:
+            formatter.dateFormat = "HH:mm"
+        case .Month:
+            formatter.dateFormat = "MM/dd"
+        default:
+            formatter.dateFormat = "yyyy/MM"
+        }
         
         var a = 0.0
         

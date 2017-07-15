@@ -22,9 +22,6 @@ class NetworkHandler {
                     failure(.Network)
                 }
             }
-//            .responseJSON { response in
-//                    print(response.result.value!)
-//            }
     }
 
 }
@@ -33,4 +30,3 @@ enum ErrorTypes: String {
     case Network        = "Network failure"
     case ObjectParser   = "Error unwrapping the requested data"
 }
-

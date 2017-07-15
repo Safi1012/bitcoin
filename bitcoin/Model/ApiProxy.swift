@@ -38,8 +38,8 @@ class ApiProxy {
 }
 
 enum Interval: String {
-    case Day    = "daily"
-    case Month  = "monthly"
-    case Year   = "yearly"
+    case Day     = "daily"
+    case Month   = "monthly"
+    case Alltime = "alltime"
 }
 
