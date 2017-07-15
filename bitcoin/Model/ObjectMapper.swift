@@ -23,9 +23,9 @@ class ObjectMapper {
         }
     }
     
-    func parseHistoricData(json: Data) -> [HistoricData]? {
+    func parseHistoricData(json: Data) -> [HistoricalData]? {
         do {
-            let historicData = try self.decoder.decode([HistoricData].self, from: json)
+            let historicData = try self.decoder.decode([HistoricalData].self, from: json)
             return historicData
             
         } catch {
@@ -53,7 +53,7 @@ struct Percent: Codable {
 
 // HistoricData
 
-struct HistoricData: Codable {
+struct HistoricalData: Codable {
     var average: Double
     var time: Date
     
@@ -63,7 +63,7 @@ struct HistoricData: Codable {
     }
 }
 
-extension HistoricData {
+extension HistoricalData {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let average = try values.decode(Double.self, forKey: .average)

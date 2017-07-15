@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var allTimePeriodButton: UIButton!
     @IBOutlet weak var lineChartView: LineChartView!
     
+    var chartData = ChartData()
+    
     
     // MARK: - Liecycle
     
@@ -92,19 +94,25 @@ class ViewController: UIViewController {
     }
     
     func updateChartData(interval: Interval) {
-        ApiProxy().fetchHistoricData(interval: interval, success: { (historicData) in
-            self.drawChart(historicData: historicData, interval: interval)
-            
-        }) { (error) in
-            print(error.rawValue)
+        let chartData = self.chartData.getChartDataForInterval(interval: interval)
+        
+        if chartData != nil {
+            drawChart(historicData: chartData!, interval: interval)
+        } else {
+            ApiProxy().fetchHistoricData(interval: interval, success: { (historicData) in
+                self.chartData.setChartDataForInterval(interval: interval, historicalData: historicData)
+                self.drawChart(historicData: historicData, interval: interval)
+                
+            }) { (error) in
+                print(error.rawValue)
+            }
         }
     }
     
-    func drawChart(historicData: [HistoricData], interval: Interval) {
+    func drawChart(historicData: [HistoricalData], interval: Interval) {
+        let formatter = DateFormatter()
         var dataEntries: [ChartDataEntry] = []
         var dates = [String]()
-        
-        let formatter = DateFormatter()
         
         switch interval {
         case .Day:
@@ -115,13 +123,14 @@ class ViewController: UIViewController {
             formatter.dateFormat = "yyyy/MM"
         }
         
-        var a = 0.0
+        var position = 0.0
         
+        // the "bitcoinaverage.com" API returns the historical data in descending order by time -> .reversed()
         for i in (0..<historicData.count).reversed() {
-            let dataEntry = ChartDataEntry(x: Double(a), y: historicData[i].average)
+            let dataEntry = ChartDataEntry(x: Double(position), y: historicData[i].average)
             dataEntries.append(dataEntry)
             dates.append(formatter.string(from: historicData[i].time))
-            a += 1.0
+            position += 1.0
         }
         
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "")
@@ -136,7 +145,6 @@ class ViewController: UIViewController {
         dataSets.append(lineChartDataSet)
         
         let lineChartData = LineChartData(dataSets: dataSets)
-        
         lineChartView.data = lineChartData
         lineChartView.animate(xAxisDuration: 1.5)
         lineChartView.xAxis.labelPosition = .bottom

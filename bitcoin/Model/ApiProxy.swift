@@ -22,7 +22,7 @@ class ApiProxy {
         }
     }
     
-    func fetchHistoricData(interval: Interval, success: @escaping ([HistoricData]) -> (), failure: @escaping (ErrorTypes) -> ()) {
+    func fetchHistoricData(interval: Interval, success: @escaping ([HistoricalData]) -> (), failure: @escaping (ErrorTypes) -> ()) {
         let apiParameters = ["period": interval.rawValue]
         
         NetworkHandler().requestJSON(apiPath: "indices/global/history/BTCUSD", apiParameters: apiParameters, success: { (json) in
