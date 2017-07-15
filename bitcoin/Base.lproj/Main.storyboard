@@ -82,7 +82,16 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-BS-3by" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="300" width="382" height="378"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-P0-Ree">
+                                        <rect key="frame" x="181" y="179" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.1529411765" green="0.42352941179999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BDE-P0-Ree" firstAttribute="centerX" secondItem="U8g-BS-3by" secondAttribute="centerX" id="dlB-3q-pNE"/>
+                                    <constraint firstItem="BDE-P0-Ree" firstAttribute="centerY" secondItem="U8g-BS-3by" secondAttribute="centerY" id="pha-tw-G5O"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.42352941179999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="BDE-P0-Ree" id="dlQ-Wx-b6d"/>
                         <outlet property="allTimePeriodButton" destination="Q1B-9m-wGJ" id="BWO-pW-RXh"/>
                         <outlet property="lineChartView" destination="U8g-BS-3by" id="EE2-TW-aOy"/>
                         <outlet property="oneDayPeriodButton" destination="J5y-6e-SrS" id="FOV-pj-2Fs"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1332A683A7D05D44E23C2B51 /* Pods_bitcoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4120177897C14A5C44FA750A /* Pods_bitcoin.framework */; };
+		D408A4CA1F1AB9FF00FE0680 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D408A4C91F1AB9FF00FE0680 /* UIColorExtension.swift */; };
 		D411A3DD1F1969A300C4772B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D411A3DC1F1969A300C4772B /* NetworkHandler.swift */; };
 		D411A3DE1F1969A300C4772B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D411A3DC1F1969A300C4772B /* NetworkHandler.swift */; };
 		D411A3E01F19724A00C4772B /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D411A3DF1F19724A00C4772B /* ObjectMapper.swift */; };
@@ -38,6 +39,7 @@
 		1FCA0C374C32343262BEC41D /* Pods-bitcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bitcoin/Pods-bitcoin.debug.xcconfig"; sourceTree = "<group>"; };
 		3601F16841015ECD1668D8A3 /* Pods-bitcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitcoin/Pods-bitcoin.release.xcconfig"; sourceTree = "<group>"; };
 		4120177897C14A5C44FA750A /* Pods_bitcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D408A4C91F1AB9FF00FE0680 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D411A3DC1F1969A300C4772B /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		D411A3DF1F19724A00C4772B /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
 		D4168E941F1AAA9200AFE9CE /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D408A4C81F1AB9BC00FE0680 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D408A4C91F1AB9FF00FE0680 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D46A19AD1F1923280038B44C = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		D46A19B81F1923280038B44C /* bitcoin */ = {
 			isa = PBXGroup;
 			children = (
+				D408A4C81F1AB9BC00FE0680 /* Extensions */,
 				D493862A1F19649A00C3A314 /* Model */,
 				D49386291F19649200C3A314 /* ViewController */,
 				D46A19B91F1923280038B44C /* AppDelegate.swift */,
@@ -313,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4168E951F1AAA9200AFE9CE /* ChartData.swift in Sources */,
+				D408A4CA1F1AB9FF00FE0680 /* UIColorExtension.swift in Sources */,
 				D46A19BC1F1923280038B44C /* ViewController.swift in Sources */,
 				D493862C1F1964B100C3A314 /* ApiProxy.swift in Sources */,
 				D46A19BA1F1923280038B44C /* AppDelegate.swift in Sources */,

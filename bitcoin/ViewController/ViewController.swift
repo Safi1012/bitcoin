@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var oneMonthPeriodButton: UIButton!
     @IBOutlet weak var allTimePeriodButton: UIButton!
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var chartData = ChartData()
     
@@ -25,6 +27,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // clear default chart view message
+        lineChartView.noDataText = ""
+        lineChartView.noDataTextColor = UIColor.white
         
         // 1Day button is preselected
         oneDayPeriodButton.isSelected = true
@@ -81,10 +87,10 @@ class ViewController: UIViewController {
             
             if tickerData.changes.percent.day >= 0.0 {
                 self.trendIndicatorImageView.image = UIImage(named: "arrowUpSoftEdge")
-                self.trendIndicatorImageView.tintColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+                self.trendIndicatorImageView.tintColor = UIColor.bitcoinGreen
             } else {
                 self.trendIndicatorImageView.image = UIImage(named: "arrowDownSoftEdge")
-                self.trendIndicatorImageView.tintColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+                self.trendIndicatorImageView.tintColor = UIColor.bitcoinRed
             }
             
         }) { (error) in
@@ -94,17 +100,23 @@ class ViewController: UIViewController {
     }
     
     func updateChartData(interval: Interval) {
+        lineChartView.clear()
+        activityIndicator.startAnimating()
         let chartData = self.chartData.getChartDataForInterval(interval: interval)
         
         if chartData != nil {
+            activityIndicator.stopAnimating()
             drawChart(historicData: chartData!, interval: interval)
         } else {
             ApiProxy().fetchHistoricData(interval: interval, success: { (historicData) in
+                self.activityIndicator.stopAnimating()
                 self.chartData.setChartDataForInterval(interval: interval, historicalData: historicData)
                 self.drawChart(historicData: historicData, interval: interval)
                 
             }) { (error) in
-                print(error.rawValue)
+                self.activityIndicator.stopAnimating()
+                self.lineChartView.noDataText = "Failed to load the chart data. Please try again later"
+                
             }
         }
     }
@@ -138,15 +150,14 @@ class ViewController: UIViewController {
         lineChartDataSet.mode = .horizontalBezier
         lineChartDataSet.lineWidth = 1.0
         lineChartDataSet.circleRadius = 0.0
-        lineChartDataSet.highlightColor = UIColor.red
         lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = true
         
         var dataSets = [IChartDataSet]()
         dataSets.append(lineChartDataSet)
         
         let lineChartData = LineChartData(dataSets: dataSets)
-        lineChartView.data = lineChartData
-        lineChartView.animate(xAxisDuration: 1.5)
+        
+        lineChartView.animate(xAxisDuration: 1.0)
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.drawGridLinesEnabled = false
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dates)
@@ -157,9 +168,10 @@ class ViewController: UIViewController {
         lineChartView.leftAxis.labelTextColor = UIColor.white
         lineChartView.legend.enabled = false
         lineChartView.chartDescription = nil
-        lineChartView.backgroundColor = UIColor(red: 39/255, green: 108/255, blue: 186/255, alpha: 1.0)
-        lineChartView.leftAxis.axisLineColor = UIColor(red: 39/255, green: 108/255, blue: 186/255, alpha: 1.0)
+        lineChartView.backgroundColor = UIColor.bitcoinBlue
+        lineChartView.leftAxis.axisLineColor = UIColor.bitcoinBlue
         lineChartView.minOffset = 20.0
+        lineChartView.data = lineChartData
     }
     
 }
