@@ -25,6 +25,14 @@ class ViewController: UIViewController {
         }) { (error) in
             print(error.rawValue)
         }
+        
+        
+        ApiProxy().fetchHistoricData(interval: .Day, success: { (tickerData) in
+            print("\(tickerData)")
+        }) { (error) in
+            print(error.rawValue)
+        }
+        
     }
     
     func setChart(dataPoints: [Double]) {

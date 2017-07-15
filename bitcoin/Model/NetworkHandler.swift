@@ -19,18 +19,18 @@ class NetworkHandler {
                     success(response.result.value!)
                     
                 default:
-                    failure(.network)
+                    failure(.Network)
                 }
             }
-            .responseJSON { response in
-                    print(response.result.value!)
-            }
+//            .responseJSON { response in
+//                    print(response.result.value!)
+//            }
     }
 
 }
 
 enum ErrorTypes: String {
-    case network        = "Network failure"
-    case objectParser   = "Error unwrapping the requested data"
+    case Network        = "Network failure"
+    case ObjectParser   = "Error unwrapping the requested data"
 }
 

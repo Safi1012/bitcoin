@@ -10,11 +10,11 @@ import Foundation
 
 class ObjectMapper {
     
+    let decoder = JSONDecoder()
+    
     func parseTickerData(json: Data) -> TickerData? {
-        let decoder = JSONDecoder()
-        
         do {
-            let tickerData = try decoder.decode(TickerData.self, from: json)
+            let tickerData = try self.decoder.decode(TickerData.self, from: json)
             return tickerData
             
         } catch {
@@ -23,7 +23,20 @@ class ObjectMapper {
         }
     }
     
+    func parseHistoricData(json: Data) -> [HistoricData]? {
+        do {
+            let historicData = try self.decoder.decode([HistoricData].self, from: json)
+            return historicData
+            
+        } catch {
+            return nil
+            
+        }
+    }
+    
 }
+
+// TickerData
 
 struct TickerData: Codable {
     var last: Double
@@ -36,5 +49,32 @@ struct Changes: Codable {
 
 struct Percent: Codable {
     var day: Double
+}
+
+// HistoricData
+
+struct HistoricData: Codable {
+    var average: Double
+    var time: Date
+    
+    private enum CodingKeys: String, CodingKey {
+        case average
+        case time
+    }
+}
+
+extension HistoricData {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let average = try values.decode(Double.self, forKey: .average)
+        let dateString = try values.decode(String.self, forKey: .time)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let time = dateFormatter.date(from:dateString)!
+        
+        self.average = average
+        self.time = time
+    }
 }
 
