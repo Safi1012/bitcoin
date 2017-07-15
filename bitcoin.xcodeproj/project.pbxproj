@@ -39,6 +39,7 @@
 		D411A3DC1F1969A300C4772B /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		D411A3DF1F19724A00C4772B /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
 		D42E2A691F1929BF007276D1 /* bitcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bitcoin-Bridging-Header.h"; sourceTree = "<group>"; };
+		D43CA09A1F1A652200062730 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D46A19B61F1923280038B44C /* bitcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46A19B91F1923280038B44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D46A19BB1F1923280038B44C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		D46A19AD1F1923280038B44C = {
 			isa = PBXGroup;
 			children = (
+				D43CA09A1F1A652200062730 /* README.md */,
 				D46A19B81F1923280038B44C /* bitcoin */,
 				D46A19CD1F1923280038B44C /* bitcoinTests */,
 				D46A19B71F1923280038B44C /* Products */,
