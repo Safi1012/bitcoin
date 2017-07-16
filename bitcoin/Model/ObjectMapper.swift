@@ -23,10 +23,10 @@ class ObjectMapper {
         }
     }
     
-    func parseHistoricData(json: Data) -> [HistoricalData]? {
+    func parseHistoricalData(json: Data) -> [HistoricalData]? {
         do {
-            let historicData = try self.decoder.decode([HistoricalData].self, from: json)
-            return historicData
+            let historicalData = try self.decoder.decode([HistoricalData].self, from: json)
+            return historicalData
             
         } catch {
             return nil
@@ -36,7 +36,8 @@ class ObjectMapper {
     
 }
 
-// TickerData
+
+// MARK: - TickerData
 
 struct TickerData: Codable {
     var last: Double
@@ -51,7 +52,8 @@ struct Percent: Codable {
     var day: Double
 }
 
-// HistoricData
+
+// MARK: - HistoricalData
 
 struct HistoricalData: Codable {
     var average: Double

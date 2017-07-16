@@ -1,5 +1,5 @@
 //
-//  HistoricData.swift
+//  ChartData
 //  bitcoin
 //
 //  Created by Filipe Santos Correa on 15.07.17.

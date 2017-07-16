@@ -17,7 +17,6 @@ class NetworkHandler {
                 switch response.result {
                 case .success:
                     success(response.result.value!)
-                    
                 default:
                     failure(.Network)
                 }

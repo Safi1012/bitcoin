@@ -6,7 +6,6 @@
 //  Copyright © 2017 Filipe Santos Correa. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIColor {
