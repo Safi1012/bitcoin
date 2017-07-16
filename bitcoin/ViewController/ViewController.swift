@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 
+/// ViewController
 class ViewController: UIViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var allTimePeriodButton: UIButton!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     
     var chartData = ChartData()
     
@@ -45,34 +45,41 @@ class ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func oneDayButtonPressed(_ sender: UIButton) {
-        updatedButtonState(button: sender)
+        updateButtonStates(button: sender)
         updateChartData(interval: .Day)
     }
     
     @IBAction func oneMounthButtonPressed(_ sender: UIButton) {
-        updatedButtonState(button: sender)
+        updateButtonStates(button: sender)
         updateChartData(interval: .Month)
     }
     
     @IBAction func allTimeButtonPressed(_ sender: UIButton) {
-        updatedButtonState(button: sender)
+        updateButtonStates(button: sender)
         updateChartData(interval: .Alltime)
     }
     
     
     // MARK: - Button UI
     
-    func updatedButtonState(button: UIButton ) {
+    /// Updates all button states
+    ///
+    /// - Parameter button: the button sender
+    func updateButtonStates(button: UIButton ) {
         resetButtonStates()
         selectButton(button: button)
     }
     
+    /// Resets all buttons states to the unselected state
     func resetButtonStates() {
         oneDayPeriodButton.isSelected = false
         oneMonthPeriodButton.isSelected = false
         allTimePeriodButton.isSelected = false
     }
     
+    /// Marks a button as active and styles the button appropriate
+    ///
+    /// - Parameter button: the button sender
     func selectButton(button: UIButton) {
         button.isSelected = true
         button.tintColor = UIColor.white
@@ -81,6 +88,7 @@ class ViewController: UIViewController {
     
     // MARK: - Chart UI
     
+    /// Fetches and updates the UI with the current Bitcoin price in USD
     func updateBitcoinPrice() {
         ApiProxy().fetchTickerData(success: { (tickerData) in
             self.priceLabel.text = String(tickerData.last) + " $"
@@ -99,6 +107,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Updates the chart data
+    ///
+    /// - Parameter interval: indicates the time period in (1 day, 1 month, alltime)
     func updateChartData(interval: Interval) {
         lineChartView.noDataText = ""
         lineChartView.clear()
@@ -107,13 +118,13 @@ class ViewController: UIViewController {
         
         if chartData != nil {
             activityIndicator.stopAnimating()
-            lineChartView.drawBitcoinChar(historicalData: chartData!, interval: interval)
+            lineChartView.drawBitcoinChart(historicalData: chartData!, interval: interval)
             
         } else {
             ApiProxy().fetchHistoricalData(interval: interval, success: { (historicalData) in
                 self.activityIndicator.stopAnimating()
                 self.chartData.setChartDataForInterval(interval: interval, historicalData: historicalData)
-                self.lineChartView.drawBitcoinChar(historicalData: historicalData, interval: interval)
+                self.lineChartView.drawBitcoinChart(historicalData: historicalData, interval: interval)
                 
             }) { (error) in
                 self.activityIndicator.stopAnimating()
@@ -124,8 +135,13 @@ class ViewController: UIViewController {
         }
     }
     
+    /// Draw historical Bitcoin data on a line chart diagram
+    ///
+    /// - Parameters:
+    ///   - historicalData: contains Bitcoin data (such as price and time) over a certain time interval
+    ///   - interval: indicates the time period in (1 day, 1 month, alltime)
     func drawChart(historicalData: [HistoricalData], interval: Interval) {
-        lineChartView.drawBitcoinChar(historicalData: historicalData, interval: interval)
+        lineChartView.drawBitcoinChart(historicalData: historicalData, interval: interval)
     }
     
 }

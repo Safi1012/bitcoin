@@ -9,9 +9,15 @@
 import UIKit
 import Charts
 
+// MARK: - LineChartView extension, extends the LineChartView class from the Charts library
 extension LineChartView {
     
-    func drawBitcoinChar(historicalData: [HistoricalData], interval: Interval) {
+    /// Draw a Bitcoin line chart graph
+    ///
+    /// - Parameters:
+    ///   - historicalData: contains Bitcoin data (such as price and time) over a certain time interval
+    ///   - interval: indicates the time period in (1 day, 1 month, alltime)
+    func drawBitcoinChart(historicalData: [HistoricalData], interval: Interval) {
         let formatter = DateFormatter()
         var dataEntries: [ChartDataEntry] = []
         var dates = [String]()

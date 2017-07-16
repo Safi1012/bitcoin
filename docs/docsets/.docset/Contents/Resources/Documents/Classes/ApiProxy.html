@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ApiProxy Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ApiProxy" class="dashAnchor"></a>
+    <a title="ApiProxy Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (41% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ApiProxy Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ApiProxy.html">ApiProxy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChartData.html">ChartData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NetworkHandler.html">NetworkHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectMapper.html">ObjectMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:7bitcoin10ErrorTypesO">ErrorTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:7bitcoin8IntervalO">Interval</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/LineChartView.html">LineChartView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ApiProxy</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">ApiProxy</span></code></pre>
+
+                </div>
+              </div>
+            <p>Contains all the methods needed in this app to fetch data from the <q>bitcoinaverage.com</q> API</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7bitcoin8ApiProxyC15fetchTickerDatayyAA0eF0Vc7success_yAA10ErrorTypesOc7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/fetchTickerData(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7bitcoin8ApiProxyC15fetchTickerDatayyAA0eF0Vc7success_yAA10ErrorTypesOc7failuretF">fetchTickerData(success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches the Bitcoin ticker data - More information can be found here: <a href="https://apiv2.bitcoinaverage.com/#ticker-data-per-symbol">https://apiv2.bitcoinaverage.com/#ticker-data-per-symbol</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">fetchTickerData</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">TickerData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums.html#/s:7bitcoin10ErrorTypesO">ErrorTypes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>returns TickerData if the data was fetched successfully from the API</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>returns an errorType if there was e.g. a network issue (no connection / timeout)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7bitcoin8ApiProxyC19fetchHistoricalDatayAA8IntervalO8interval_ySayAA0eF0VGc7successyAA10ErrorTypesOc7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/fetchHistoricalData(interval:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7bitcoin8ApiProxyC19fetchHistoricalDatayAA8IntervalO8interval_ySayAA0eF0VGc7successyAA10ErrorTypesOc7failuretF">fetchHistoricalData(interval:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches the historical Bitcoin data over a certain time period (1 day, 1 month, alltime) - More information can be found here: <a href="https://apiv2.bitcoinaverage.com/#historical-data">https://apiv2.bitcoinaverage.com/#historical-data</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">fetchHistoricalData</span><span class="p">(</span><span class="nv">interval</span><span class="p">:</span> <span class="kt"><a href="../Enums.html#/s:7bitcoin8IntervalO">Interval</a></span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt">HistoricalData</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums.html#/s:7bitcoin10ErrorTypesO">ErrorTypes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>interval</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicates the time period in (1 day, 1 month, alltime)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>returns the historical data for the passed time period, if the data was fetched successfully from the API</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>returns an errorType if there was e.g. a network issue (no connection / timeout)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-07-16)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

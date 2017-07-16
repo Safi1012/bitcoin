@@ -1,0 +1,215 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Extensions/UIColorExtension.swift",
+      "line": 13,
+      "symbol": "UIColor.bitcoinBlue",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Extensions/UIColorExtension.swift",
+      "line": 14,
+      "symbol": "UIColor.bitcoinGreen",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Extensions/UIColorExtension.swift",
+      "line": 15,
+      "symbol": "UIColor.bitcoinRed",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ApiProxy.swift",
+      "line": 59,
+      "symbol": "Interval.Day",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ApiProxy.swift",
+      "line": 60,
+      "symbol": "Interval.Month",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ApiProxy.swift",
+      "line": 61,
+      "symbol": "Interval.Alltime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ChartData.swift",
+      "line": 14,
+      "symbol": "ChartData.oneDayPriceHistory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ChartData.swift",
+      "line": 15,
+      "symbol": "ChartData.oneMonthPriceHistory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ChartData.swift",
+      "line": 16,
+      "symbol": "ChartData.allTimePriceHistory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/NetworkHandler.swift",
+      "line": 42,
+      "symbol": "ErrorTypes.Network",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/NetworkHandler.swift",
+      "line": 43,
+      "symbol": "ErrorTypes.ObjectParser",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": null,
+      "symbol": "HistoricalData",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": 14,
+      "symbol": "ObjectMapper.decoder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": 51,
+      "symbol": "TickerData",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": 56,
+      "symbol": "Changes",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": 60,
+      "symbol": "Percent",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/Model/ObjectMapper.swift",
+      "line": 67,
+      "symbol": "HistoricalData",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 16,
+      "symbol": "ViewController.priceLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 17,
+      "symbol": "ViewController.trendIndicatorImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 18,
+      "symbol": "ViewController.oneDayPeriodButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 19,
+      "symbol": "ViewController.oneMonthPeriodButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 20,
+      "symbol": "ViewController.allTimePeriodButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 21,
+      "symbol": "ViewController.lineChartView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 22,
+      "symbol": "ViewController.activityIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 24,
+      "symbol": "ViewController.chartData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 29,
+      "symbol": "ViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 48,
+      "symbol": "ViewController.oneDayButtonPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 53,
+      "symbol": "ViewController.oneMounthButtonPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/filipe/SourceTree/iOS/bitcoin/bitcoin/ViewController/ViewController.swift",
+      "line": 58,
+      "symbol": "ViewController.allTimeButtonPressed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/filipe/SourceTree/iOS/bitcoin"
+}

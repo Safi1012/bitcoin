@@ -9,8 +9,14 @@
 import Foundation
 import Alamofire
 
+/// Contains all the methods needed in this app to fetch data from the "bitcoinaverage.com" API
 class ApiProxy {
     
+    /// Fetches the Bitcoin ticker data - More information: https://apiv2.bitcoinaverage.com/#ticker-data-per-symbol
+    ///
+    /// - Parameters:
+    ///   - success: returns TickerData if the data was fetched successfully from the API
+    ///   - failure: returns an errorType if there was e.g. a network issue (no connection / timeout)
     func fetchTickerData(success: @escaping (TickerData) -> (), failure: @escaping (ErrorTypes) -> ()) {
         NetworkHandler().requestJSON(apiPath: "indices/global/ticker/BTCUSD", apiParameters: [:], success: { (json) in
             let tickerData = ObjectMapper().parseTickerData(json: json)
@@ -22,6 +28,12 @@ class ApiProxy {
         }
     }
     
+    /// Fetches the historical Bitcoin data over a certain time period (1 day, 1 month, alltime) - More information: https://apiv2.bitcoinaverage.com/#historical-data
+    ///
+    /// - Parameters:
+    ///   - interval: indicates the time period in (1 day, 1 month, alltime)
+    ///   - success: returns the historical data for the passed time period, if the data was fetched successfully from the API
+    ///   - failure: returns an errorType if there was e.g. a network issue (no connection / timeout)
     func fetchHistoricalData(interval: Interval, success: @escaping ([HistoricalData]) -> (), failure: @escaping (ErrorTypes) -> ()) {
         let apiParameters = ["period": interval.rawValue]
         
@@ -37,6 +49,12 @@ class ApiProxy {
     
 }
 
+
+/// Indicates a time interval
+///
+/// - Day: 1 day period
+/// - Month: 1 month period
+/// - Alltime: alltime period (since the beginning)
 enum Interval: String {
     case Day     = "daily"
     case Month   = "monthly"

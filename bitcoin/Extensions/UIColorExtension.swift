@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - UIColor extension
 extension UIColor {
     static let bitcoinBlue = UIColor(red: 39/255, green: 108/255, blue: 186/255, alpha: 1.0)
     static let bitcoinGreen = UIColor(red: 178/255, green: 255/255, blue: 89/255, alpha: 1.0)

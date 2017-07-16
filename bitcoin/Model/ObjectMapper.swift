@@ -8,10 +8,15 @@
 
 import Foundation
 
+/// Converts data to swift objects, it maps the data to objects
 class ObjectMapper {
     
     let decoder = JSONDecoder()
     
+    /// Parses tickerData json data to an object of type TickerData
+    ///
+    /// - Parameter json: json data that should be converted to an object of type TickerData
+    /// - Returns: an object of type TickerData if the data could be successfully converted, otherwise nil
     func parseTickerData(json: Data) -> TickerData? {
         do {
             let tickerData = try self.decoder.decode(TickerData.self, from: json)
@@ -23,6 +28,10 @@ class ObjectMapper {
         }
     }
     
+    /// Parses historical json data to an object of type HistoricalData
+    ///
+    /// - Parameter json: json data that should be converted to an object of type [HistoricalData]
+    /// - Returns: an array of type [HistoricalData] if the data could be successfully converted, otherwise nil
     func parseHistoricalData(json: Data) -> [HistoricalData]? {
         do {
             let historicalData = try self.decoder.decode([HistoricalData].self, from: json)
