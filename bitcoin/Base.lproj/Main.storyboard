@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,10 +13,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bitcoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,23 +93,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.42352941179999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Enl-z3-pXg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="26Z-bz-lap"/>
+                            <constraint firstItem="Enl-z3-pXg" firstAttribute="top" secondItem="CIH-mH-fup" secondAttribute="top" constant="64" id="26Z-bz-lap"/>
                             <constraint firstItem="U8g-BS-3by" firstAttribute="top" secondItem="Q1B-9m-wGJ" secondAttribute="bottom" constant="8" id="3Gr-Zr-m6O"/>
                             <constraint firstItem="U8g-BS-3by" firstAttribute="top" secondItem="GOH-PO-Sen" secondAttribute="bottom" priority="750" constant="123" id="7hL-ZU-3cY"/>
                             <constraint firstItem="GOH-PO-Sen" firstAttribute="top" secondItem="Enl-z3-pXg" secondAttribute="bottom" constant="8" id="9GX-kX-pAo"/>
-                            <constraint firstItem="GOH-PO-Sen" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4" id="9PE-j0-cUp"/>
+                            <constraint firstItem="GOH-PO-Sen" firstAttribute="centerX" secondItem="CIH-mH-fup" secondAttribute="centerX" constant="-4" id="9PE-j0-cUp"/>
                             <constraint firstItem="X8t-1L-zkZ" firstAttribute="leading" secondItem="GOH-PO-Sen" secondAttribute="trailing" constant="8" id="9k9-1h-Yc2"/>
                             <constraint firstItem="Q1B-9m-wGJ" firstAttribute="leading" secondItem="NEg-9d-5GE" secondAttribute="trailing" constant="32" id="Hje-Br-KYy"/>
                             <constraint firstItem="U8g-BS-3by" firstAttribute="top" secondItem="J5y-6e-SrS" secondAttribute="bottom" constant="8" id="RlB-Je-kVn"/>
-                            <constraint firstAttribute="trailing" secondItem="U8g-BS-3by" secondAttribute="trailing" constant="16" id="WFu-XV-dHs"/>
+                            <constraint firstItem="CIH-mH-fup" firstAttribute="trailing" secondItem="U8g-BS-3by" secondAttribute="trailing" constant="16" id="WFu-XV-dHs"/>
                             <constraint firstItem="NEg-9d-5GE" firstAttribute="leading" secondItem="J5y-6e-SrS" secondAttribute="trailing" constant="37" id="ZxT-9I-TrR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U8g-BS-3by" secondAttribute="bottom" constant="58" id="dLM-Rz-Zeb"/>
+                            <constraint firstItem="CIH-mH-fup" firstAttribute="bottom" secondItem="U8g-BS-3by" secondAttribute="bottom" constant="58" id="dLM-Rz-Zeb"/>
                             <constraint firstItem="U8g-BS-3by" firstAttribute="top" secondItem="X8t-1L-zkZ" secondAttribute="bottom" priority="750" constant="129" id="lf6-si-Cs7"/>
-                            <constraint firstItem="U8g-BS-3by" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="qSf-n5-byF"/>
-                            <constraint firstItem="Enl-z3-pXg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4.5" id="vpc-Rd-gRS"/>
-                            <constraint firstItem="NEg-9d-5GE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y30-nu-ltg"/>
+                            <constraint firstItem="U8g-BS-3by" firstAttribute="leading" secondItem="CIH-mH-fup" secondAttribute="leading" constant="16" id="qSf-n5-byF"/>
+                            <constraint firstItem="Enl-z3-pXg" firstAttribute="centerX" secondItem="CIH-mH-fup" secondAttribute="centerX" constant="-4.5" id="vpc-Rd-gRS"/>
+                            <constraint firstItem="NEg-9d-5GE" firstAttribute="centerX" secondItem="CIH-mH-fup" secondAttribute="centerX" id="y30-nu-ltg"/>
                             <constraint firstItem="U8g-BS-3by" firstAttribute="top" secondItem="NEg-9d-5GE" secondAttribute="bottom" constant="8" id="z6i-HN-ukx"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="CIH-mH-fup"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="BDE-P0-Ree" id="dlQ-Wx-b6d"/>
