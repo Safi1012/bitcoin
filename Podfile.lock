@@ -1,25 +1,25 @@
 PODS:
-  - Alamofire (4.5.0)
-  - Charts (3.0.2):
-    - Charts/Core (= 3.0.2)
-  - Charts/Core (3.0.2)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
+  - Alamofire (4.5.1)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
-  - Charts (~> 3.0.2)
-  - RealmSwift (~> 2.8.3)
+  - Charts (~> 3.0.4)
+  - RealmSwift
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
 
-PODFILE CHECKSUM: 10c81c239fd32a4c943d2cb894e5b0396c15da34
+PODFILE CHECKSUM: 2c9756799b2c1b2901d696010e85a97ae272dd98
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
